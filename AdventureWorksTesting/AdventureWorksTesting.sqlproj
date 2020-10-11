@@ -224,20 +224,6 @@
     <Build Include="ufnGetContactInformation\Stored Procedures\test that the correct contact information is returned for 4351.sql" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="tSQLtCLR">
-      <HintPath>..\Assemblies\tSQLtCLR.dll</HintPath>
-      <IsModelAware>True</IsModelAware>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\AdventureWorks\AdventureWorks.sqlproj">
-      <Name>AdventureWorks</Name>
-      <Project>{ef097c7c-facb-4f71-bf66-dc6508f6b3fd}</Project>
-      <Private>True</Private>
-      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <ArtifactReference Include="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\Extensions\Microsoft\SQLDB\Extensions\SqlServer\130\SqlSchemas\master.dacpac">
       <HintPath>$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\130\SqlSchemas\master.dacpac</HintPath>
       <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
@@ -246,5 +232,25 @@
   </ItemGroup>
   <ItemGroup>
     <PreDeploy Include="Script.PreDeployment.Setup_tSQLt.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AdventureWorks\AdventureWorks.sqlproj">
+      <Name>AdventureWorks</Name>
+      <Project>{ef097c7c-facb-4f71-bf66-dc6508f6b3fd}</Project>
+      <Private>True</Private>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+      <DatabaseSqlCmdVariable>AdventureWorks</DatabaseSqlCmdVariable>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <SqlCmdVariable Include="AdventureWorks">
+      <DefaultValue>AdventureWorks</DefaultValue>
+      <Value>$(SqlCmdVar__1)</Value>
+    </SqlCmdVariable>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="tSQLtCLR">
+      <HintPath>..\AdventureWorks\Assemblies\tSQLtCLR.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>
