@@ -74,7 +74,6 @@
     <Folder Include="Production\Views\" />
     <Folder Include="Person\Views\" />
     <Folder Include="HumanResources\Views\" />
-    <Folder Include="Storage\" />
     <Folder Include="dbo\Functions\" />
     <Folder Include="dbo\Stored Procedures\" />
     <Folder Include="HumanResources\Stored Procedures\" />
@@ -180,7 +179,6 @@
     <Build Include="HumanResources\Views\vEmployeeDepartmentHistory.sql" />
     <Build Include="HumanResources\Views\vEmployeeDepartment.sql" />
     <Build Include="HumanResources\Views\vEmployee.sql" />
-    <Build Include="Storage\AW2016FullTextCatalog.sql" />
     <Build Include="FullTextIndexes.sql" />
     <Build Include="dbo\Functions\ufnLeadingZeros.sql" />
     <Build Include="dbo\Functions\ufnGetStock.sql" />

@@ -12,7 +12,7 @@
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
-    <RootNamespace>AdventureWorksTesting</RootNamespace>
+    <RootNamespace>AdventureWorks</RootNamespace>
     <AssemblyName>AdventureWorksTesting</AssemblyName>
     <ModelCollation>1033, CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
@@ -245,6 +245,8 @@
     </ArtifactReference>
   </ItemGroup>
   <ItemGroup>
-    <PreDeploy Include="Script.PreDeployment.Setup_tSQLt.sql" />
+    <PreDeploy Include="Script.PreDeployment.Setup_tSQLt.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </PreDeploy>
   </ItemGroup>
 </Project>
