@@ -29,8 +29,8 @@ steps:
   inputs:
     solution: '$(solution)'
     platform: '$(buildPlatform)'
+    msbuildArgs: '/t:AdventureWorks /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\WebApp.zip" /p:DeployIisAppPath="Default Web Site"'
     configuration: '$(buildConfiguration)'
-    # msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\WebApp.zip" /p:DeployIisAppPath="Default Web Site"'
 - task: powershell@2
   displayName: DirectoryList
   inputs:
