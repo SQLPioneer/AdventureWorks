@@ -24,13 +24,21 @@ steps:
   displayName: DirectoryList
   inputs:
     targetType: inline
-    script: dir -s
+    script: dir $(Build.SourcesDirectory) -s
 - task: VSBuild@1
+  displayName:  Build AdventureWorks
   inputs:
     solution: '$(solution)'
     platform: '$(buildPlatform)'
+    msbuildArgs: '/t:AdventureWorks ' #/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\WebApp.zip" /p:DeployIisAppPath="Default Web Site"'
     configuration: '$(buildConfiguration)'
-    # msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\WebApp.zip" /p:DeployIisAppPath="Default Web Site"'
+- task: VSBuild@1
+  displayName:  Build AdventureWorksTesting
+  inputs:
+    solution: '$(solution)'
+    platform: '$(buildPlatform)'
+    msbuildArgs: '/t:AdventureWorksTesting' #/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\WebApp.zip" /p:DeployIisAppPath="Default Web Site"'
+    configuration: '$(buildConfiguration)'
 - task: powershell@2
   displayName: DirectoryList
   inputs:
